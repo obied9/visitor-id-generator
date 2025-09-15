@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الزوار - مهرجان</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- مكتبات QR Code -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+
+    <!-- مكتبة html2canvas لحفظ البطاقة كصورة -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <!-- مكتبة jsPDF لحفظ البطاقة كـ PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <!-- شعار الجهة -->
+    <div class="logo">
+        <img src="logo.png" alt="شعار الجهة">
+    </div>
+
+    <!-- جملة ترحيبية متحركة -->
+    <div class="welcome-text">
+        مرحبًا بكم في مهرجاننا – سجل بياناتك واحصل على بطاقة الزائر
+    </div>
+
+    <!-- نموذج تسجيل الزائر -->
+    <form id="visitorForm">
+        <label>الاسم الكامل:</label>
+        <input type="text" id="fullName" required>
+
+        <label>الجهة / الشركة / المؤسسة:</label>
+        <input type="text" id="organization">
+
+        <label>الفئة:</label>
+        <select id="category">
+            <option value="زائر">زائر</option>
+            <option value="موظف">موظف</option>
+            <option value="ضابط">ضابط</option>
+            <option value="فرد">فرد</option>
+            <option value="تابع">تابع</option>
+
+        </select>
+
+        <label> (اختياري) البريد الإلكتروني:</label>
+        <input type="email" id="email">
+
+        <label>رقم جوال او رقم الهويه:</label>
+        <input type="text" id="phone">
+
+        <button type="submit">تسجيل وإنشاء QR</button>
+    </form>
+
+    <!-- عرض QR Code بعد التسجيل -->
+    <div id="qrContainer">
+        <h2>QR Code للزائر</h2>
+        <canvas id="qrcode"></canvas>
+    </div>
+
+    <!-- بطاقة ID للزائر -->
+    <div id="idCard" class="id-card">
+        <div class="id-header">
+            <img src="logo.png" alt="Logo" class="id-logo">
+            <h3 class="id-title">بطاقة الزائر</h3>
+        </div>
+        <div class="id-body">
+            <p id="idName"></p>
+            <p id="idCategory"></p>
+            <p id="idOrganization"></p>
+            <canvas id="idQR"></canvas>
+        </div>
+        <div class="id-footer">
+            <button id="downloadBtn">تحميل البطاقة كصورة</button>
+            <button id="downloadPDF">تحميل البطاقة كـ PDF</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
