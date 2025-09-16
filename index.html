@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء دعوة زائر</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+    <main class="container">
+        <section id="form-section" class="card-glass">
+            <img src="logo.png" alt="شعار الجهة" class="logo">
+            <h1>إنشاء بطاقة دعوة</h1>
+            <p class="subtitle">قم بتعبئة البيانات لإنشاء بطاقة الزائر الخاصة بك</p>
+            
+            <form id="visitorForm">
+                <div class="form-group">
+                    <label for="fullName">الاسم الكامل</label>
+                    <input type="text" id="fullName" placeholder="مثال: عبيد الحربي" required>
+                </div>
+                <div class="form-group">
+                    <label for="organization">الجهة / الشركة</label>
+                    <input type="text" id="organization" placeholder="مثال: شركة علم">
+                </div>
+                <div class="form-group">
+                    <label for="category">الفئة</label>
+                    <select id="category">
+                        <option value="زائر">زائر</option>
+                        <option value="موظف">موظف</option>
+                        <option value="ضابط">ضابط</option>
+                        <option value="فرد">فرد</option>
+                        <option value="تابع">تابع</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">إنشاء البطاقة</button>
+            </form>
+        </section>
+
+        <section id="card-display-section" class="card-glass" style="display: none;">
+            <h2>تم إنشاء بطاقتك بنجاح!</h2>
+            
+            <div id="visitorIdCard" class="id-card-container">
+                <div class="id-card-header">
+                    <h3>بطاقة زائر رسمي</h3>
+                    <img src="logo.png" alt="شعار الجهة" class="id-card-logo">
+                </div>
+                <div class="id-card-body">
+                    <div class="id-card-details">
+                        <strong id="cardName"></strong>
+                        <span id="cardOrganization"></span>
+                        <span id="cardCategory" class="category-badge"></span>
+                    </div>
+                </div>
+                <div class="id-card-footer">
+                     <canvas id="cardQrCanvas"></canvas>
+                </div>
+            </div>
+
+            <div class="download-buttons">
+                <button id="downloadPngBtn" class="download-btn">تحميل كصورة (PNG)</button>
+                <button id="downloadPdfBtn" class="download-btn">تحميل كملف (PDF)</button>
+            </div>
+            <button id="createNewCardBtn" class="link-btn">إنشاء بطاقة جديدة</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
