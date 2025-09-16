@@ -20,7 +20,7 @@ body {
     font-family: 'Tajawal', sans-serif;
     /* --- غير صورة الخلفية من هنا --- */
     background-image: url('background.jpeg');
-    background-size: contain;
+    background-size: 100% 100%;
     background-position: top;
     background-attachment: fixed;
     background-repeat: no-repeat;
