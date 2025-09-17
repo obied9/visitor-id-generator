@@ -15,7 +15,7 @@
 body {
     font-family: 'Tajawal', sans-serif;
     background-image: url('background.jpeg'); /* ضع رابط صورة الخلفية هنا */
-    background-size: 100px 100px;
+    background-size: 100% 100%;
     background-position: center;
     background-attachment: fixed;
     direction: rtl;
