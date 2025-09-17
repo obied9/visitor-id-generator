@@ -164,3 +164,21 @@ h1, h2 {
     text-decoration: underline;
     margin-top: 1rem;
 }
+
+  html, body {
+     height: 100%;
+     margin: 0;
+     padding: 0;
+     display: flex;
+    flex-direction: column;
+ }
+  main.container {
+      flex: 1; /* يأخذ كل المساحة المتاحة */
+ }
+ footer.main-footer {
+     background: #f1f1f1; /* لون خلفية فاتح */
+     color: #000000; /* نص أسود */
+     text-align: center;
+      padding: 1rem;
+      width: 100%;
+ }
