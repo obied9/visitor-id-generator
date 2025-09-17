@@ -1,13 +1,9 @@
 :root {
     --primary-color: #007bff;
-    --background-color: #f4f7f6;
-    
-    /* غيرنا قيمة هذا المتغير من الأبيض الشفاف إلى الأسود الشفاف */
-    --card-bg: rgba(0, 0, 0, 0.4); 
-    
-    --text-color: #fff;
+    --glass-bg: rgba(0, 0, 0, 0.4);
     --border-color: rgba(255, 255, 255, 0.2);
-    --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --text-color: #ffffff;
+    --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 * {
@@ -18,12 +14,10 @@
 
 body {
     font-family: 'Tajawal', sans-serif;
-    /* --- غير صورة الخلفية من هنا --- */
-    background-image: url('background.jpeg');
-    background-size: 100% 100%;
-    background-position: top;
+    background-image: url('...'); /* ضع رابط صورة الخلفية هنا */
+    background-size: cover;
+    background-position: center;
     background-attachment: fixed;
-    background-repeat: no-repeat;
     direction: rtl;
     color: var(--text-color);
     display: flex;
@@ -39,31 +33,26 @@ body {
 }
 
 .card-glass {
-    background: var(--card-bg);
+    background: var(--glass-bg);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     border-radius: 20px;
     border: 1px solid var(--border-color);
-    box-shadow: var(--shadow);
+    box-shadow: var(--card-shadow);
     padding: 2rem;
     text-align: center;
-    animation: fadeInUp 0.5s ease-in-out;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.logo {
-    width: 100px;
+.logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     margin-bottom: 1rem;
+}
+
+.logo-container img {
+    width: 100px;
+    height: auto;
 }
 
 h1, h2 {
@@ -71,40 +60,9 @@ h1, h2 {
     margin-bottom: 0.5rem;
 }
 
-.subtitle, p {
+.subtitle {
     opacity: 0.8;
     margin-bottom: 1.5rem;
-}
-
-.form-group {
-    text-align: right;
-    margin-bottom: 1rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-}
-
-.form-group input,
-.form-group select {
-    width: 100%;
-    padding: 12px 15px;
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    color: var(--text-color);
-    font-family: 'Tajawal', sans-serif;
-    font-size: 1rem;
-}
-
-.form-group input::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.form-group select option {
-    background: #2c3e50;
 }
 
 .submit-btn, .download-btn {
@@ -127,10 +85,10 @@ h1, h2 {
     box-shadow: 0 4px 20px rgba(0, 123, 255, 0.5);
 }
 
-/* --- تصميم بطاقة الهوية --- */
+/* تصميم بطاقة الهوية المبسطة */
 .id-card-container {
     width: 320px;
-    height: 500px;
+    height: 450px;
     background: white;
     color: #333;
     border-radius: 15px;
@@ -138,7 +96,7 @@ h1, h2 {
     display: flex;
     flex-direction: column;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    overflow: hidden; /* لإخفاء أي جزء يتجاوز الحدود المستديرة */
+    overflow: hidden;
 }
 
 .id-card-header {
@@ -157,39 +115,25 @@ h1, h2 {
 
 .id-card-body {
     flex-grow: 1;
-    padding: 1.5rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
-.id-card-details {
-    margin-top: 1rem;
-}
-
-.id-card-details strong {
-    display: block;
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: #2c3e50;
-}
-
-.id-card-details span {
-    display: block;
-    font-size: 1.1rem;
+.unique-id-label {
+    font-size: 1rem;
     color: #555;
-    margin-top: 0.5rem;
 }
 
-.category-badge {
-    background-color: var(--primary-color);
-    color: white !important;
-    padding: 5px 15px;
-    border-radius: 20px;
+.unique-id-text {
+    font-size: 1.5rem;
     font-weight: 700;
-    margin-top: 1rem !important;
-    display: inline-block !important;
+    color: #2c3e50;
+    margin-top: 0.5rem;
+    word-break: break-all;
 }
 
 .id-card-footer {
@@ -201,8 +145,8 @@ h1, h2 {
 }
 
 #cardQrCanvas {
-    width: 150px !important;
-    height: 150px !important;
+    width: 180px !important;
+    height: 180px !important;
 }
 
 .download-buttons {
