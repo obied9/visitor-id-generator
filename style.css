@@ -1,183 +1,180 @@
-:root {
-    --primary-color: #007bff;
-    --glass-bg: rgba(0, 0, 0, 0.4);
-    --border-color: rgba(255, 255, 255, 0.2);
-    --text-color: #ffffff;
-    --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-}
+        :root {
+            --primary-color: #007bff;
+            --glass-bg: rgba(0, 0, 0, 0.4);
+            --border-color: rgba(255, 255, 255, 0.2);
+            --text-color: #ffffff;
+            --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
-body {
-    font-family: 'Tajawal', sans-serif;
-    background-image: url('background.jpeg'); /* ضع رابط صورة الخلفية هنا */
-    background-size: 100% 100%;
-    background-position: center;
-    background-attachment: fixed;
-    direction: rtl;
-    color: var(--text-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 2rem;
-}
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Tajawal', sans-serif;
+        }
 
-.container {
-    width: 100%;
-    max-width: 450px;
-}
+        body {
+            background-image: url('background.jpeg'); /* ضع رابط صورة الخلفية */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text-color);
+        }
 
-.card-glass {
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
-    box-shadow: var(--card-shadow);
-    padding: 2rem;
-    text-align: center;
-}
+        main.container {
+            flex: 1; /* يأخذ كل المساحة المتاحة */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* منتصف الشاشة عموديًا */
+            align-items: center;     /* منتصف الشاشة أفقيًا */
+            padding: 2rem;
+        }
 
-.logo-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 1rem;
-}
+        .card-glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--card-shadow);
+            padding: 2rem;
+            text-align: center;
+            width: 100%;
+            max-width: 450px;
+        }
 
-.logo-container img {
-    width: 100px;
-    height: auto;
-}
+        .logo-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
 
-h1, h2 {
-    font-weight: 800;
-    margin-bottom: 0.5rem;
-}
+        .logo-container img {
+            width: 100px;
+            height: auto;
+        }
 
-.subtitle {
-    opacity: 0.8;
-    margin-bottom: 1.5rem;
-}
+        h1, h2 {
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
 
-.submit-btn, .download-btn {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 10px;
-    background: linear-gradient(45deg, var(--primary-color), #00c6ff);
-    color: white;
-    font-family: 'Tajawal', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 1rem;
-}
+        .subtitle {
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
 
-.submit-btn:hover, .download-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 20px rgba(0, 123, 255, 0.5);
-}
+        .submit-btn, .download-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(45deg, var(--primary-color), #00c6ff);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
 
-/* تصميم بطاقة الهوية المبسطة */
-.id-card-container {
-    width: 320px;
-    height: 450px;
-    background: white;
-    color: #333;
-    border-radius: 15px;
-    margin: 1.5rem auto;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    overflow: hidden;
-}
+        .submit-btn:hover, .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 20px rgba(0, 123, 255, 0.5);
+        }
 
-.id-card-header {
-    background-color: #2c3e50;
-    color: white;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        /* تصميم بطاقة الهوية */
+        .id-card-container {
+            width: 320px;
+            height: 450px;
+            background: white;
+            color: #333;
+            border-radius: 15px;
+            margin: 1.5rem auto;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
 
-.id-card-logo {
-    width: 50px;
-    height: 50px;
-}
+        .id-card-header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.id-card-body {
-    flex-grow: 1;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
+        .id-card-logo {
+            width: 50px;
+            height: 50px;
+        }
 
-.unique-id-label {
-    font-size: 1rem;
-    color: #555;
-}
+        .id-card-body {
+            flex-grow: 1;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
 
-.unique-id-text {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #2c3e50;
-    margin-top: 0.5rem;
-    word-break: break-all;
-}
+        .unique-id-label {
+            font-size: 1rem;
+            color: #555;
+        }
 
-.id-card-footer {
-    background-color: #f4f7f6;
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        .unique-id-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-top: 0.5rem;
+            word-break: break-all;
+        }
 
-#cardQrCanvas {
-    width: 180px !important;
-    height: 180px !important;
-}
+        .id-card-footer {
+            background-color: #f4f7f6;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.download-buttons {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-.download-btn { margin-top: 0; }
-.link-btn {
-    background: none;
-    border: none;
-    color: var(--text-color);
-    opacity: 0.8;
-    cursor: pointer;
-    text-decoration: underline;
-    margin-top: 1rem;
-}
-  main.container {
-      flex: 1; /* يأخذ كل المساحة المتاحة */
- }
-  html, body {
-       height: 50%;
-       margin: 0;
-       padding: 0;
-       display: flex;
-       flex-direction: column;
-}
- footer.main-footer {
-     background: #f1f1f1; /* لون خلفية فاتح */
-     color: #000000; /* نص أسود */
-     text-align: center;
-      padding: 1rem;
-      width: 100%;
- }
+        #cardQrCanvas {
+            width: 180px !important;
+            height: 180px !important;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .download-btn { margin-top: 0; }
+
+        .link-btn {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            opacity: 0.8;
+            cursor: pointer;
+            text-decoration: underline;
+            margin-top: 1rem;
+        }
+
+        /* الفوتر */
+        footer.main-footer {
+            background: #f1f1f1;
+            color: #000000;
+            text-align: center;
+            padding: 1rem;
+            width: 100%;
+        }
